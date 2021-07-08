@@ -8,25 +8,25 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jim.springbootnew.model.Person;
-import com.jim.springbootnew.repo.PersonRepository;
-import com.jim.springbootnew.service.PeopleService;
+import com.jim.springbootnew.model.Employee;
+import com.jim.springbootnew.repo.EmployeeRepository;
+import com.jim.springbootnew.service.EmployeeService;
 
 @RestController
 @RequestMapping(value ="/api", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-public class PersonResource {
+public class EmployeeResource {
 	
 	@Autowired
-	private PeopleService peopleService;
+	private EmployeeService employeeService;
 	
-	@GetMapping("/people")
-	public List<Person> getAllPeople(){
-		return getPeopleService().findAllPeople();
+	@GetMapping("/employees")
+	public List<Employee> getAllEmployees(){
+		return getEmployeeService().findAllEmployees();
 	}
 	
 	
-	public PeopleService getPeopleService() {
-		return this.peopleService;
+	public EmployeeService getEmployeeService() {
+		return this.employeeService;
 	}
 	
 

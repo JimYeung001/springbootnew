@@ -15,7 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class PeopleResourceTest {
+public class EmployeeResourceTest {
 	
 	@Autowired
 	private MockMvc mockMvc;
@@ -23,7 +23,7 @@ public class PeopleResourceTest {
 	
 	@Test
 	public void should_return_list_people() throws Exception {
-		this.mockMvc.perform(get("/api/people").accept(MediaType.APPLICATION_JSON).contentType(MediaType.APPLICATION_JSON))
+		this.mockMvc.perform(get("/api/employees").accept(MediaType.APPLICATION_JSON).contentType(MediaType.APPLICATION_JSON))
 			.andDo(print())
 			.andExpect(status().isOk())
 			.andExpect(jsonPath("$").isArray());
